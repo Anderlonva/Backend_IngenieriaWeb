@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 # copia todo el contenido de nuestra aplicacion dentro del directorio que creamos en WORKDIR
 
-EXPOSE 3000
+EXPOSE 4000
 # debe de ser el mismo puerto que configuramos en PORT en el archivo .env
 
 CMD [ "node", "index.js" ]
