@@ -70,4 +70,18 @@ router.put('/:tipoEquipoId', async function(req, res){
 
 });
 
+router.get('/:tipoEquipoId', async function( req, res ) {
+    try {
+        const tipoEquipo = await TipoEquipo.findById(req.params.tipoEquipoId)
+        if (!tipoEquipo) {
+            return res.status(404).send('Tipo Equipo no existe')
+        }
+        res.send(tipoEquipo)
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
 module.exports = router
